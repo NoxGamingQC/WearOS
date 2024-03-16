@@ -19,6 +19,10 @@ android {
 
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -49,7 +53,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.play.services.wearable)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
@@ -63,8 +66,15 @@ dependencies {
     implementation(libs.horologist.compose.tools)
     implementation(libs.horologist.tiles)
     implementation(libs.watchface.complications.data.source.ktx)
+    implementation(libs.watchface)
+    implementation(libs.watchface.complications.rendering)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    implementation(libs.watchface.editor)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
+    implementation(libs.watchface.editor)
 }
