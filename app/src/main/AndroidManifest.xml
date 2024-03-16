@@ -22,7 +22,7 @@
         <service
             android:name=".complication.MainComplicationService"
             android:exported="true"
-            android:icon="@drawable/splash_icon"
+            android:icon="@drawable/watch_ticks"
             android:label="@string/complication_label"
             android:permission="com.google.android.wearable.permission.BIND_COMPLICATION_PROVIDER">
             <intent-filter>

@@ -40,7 +40,10 @@ fun createUserStyleSchema(context: Context): UserStyleSchema {
             )
         )
 
-    // 2. Allows user to toggle on/off the hour pips (dashes around the outer edge of the watch
+    // 2. Allow user to change the disposition of the clock
+
+
+    // 3. Allows user to toggle on/off the hour pips (dashes around the outer edge of the watch
     // face).
     val drawHourPipsStyleSetting = UserStyleSetting.BooleanUserStyleSetting(
         UserStyleSetting.Id(DRAW_HOUR_PIPS_STYLE_SETTING),
@@ -52,7 +55,7 @@ fun createUserStyleSchema(context: Context): UserStyleSchema {
         DRAW_HOUR_PIPS_DEFAULT
     )
 
-    // 3. Allows user to change the length of the minute hand.
+    // 4. Allows user to change the length of the minute hand.
     val watchHandLengthStyleSetting = UserStyleSetting.DoubleRangeUserStyleSetting(
         UserStyleSetting.Id(WATCH_HAND_LENGTH_STYLE_SETTING),
         context.resources,
@@ -65,7 +68,7 @@ fun createUserStyleSchema(context: Context): UserStyleSchema {
         MINUTE_HAND_LENGTH_FRACTION_DEFAULT.toDouble()
     )
 
-    // 4. Create style settings to hold all options.
+    // 5. Create style settings to hold all options.
     return UserStyleSchema(
         listOf(
             colorStyleSetting,

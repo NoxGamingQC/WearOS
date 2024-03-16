@@ -18,7 +18,7 @@
     class="androidx.wear.watchface.complications.rendering.ComplicationDrawable"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:backgroundColor="@color/black"
-    app:borderColor="@color/white_90"
+    app:borderColor="@color/black"
     app:borderStyle="solid"
     app:highlightColor="@color/white_30"
     app:iconColor="@color/white"
@@ -30,10 +30,12 @@
     app:titleColor="@color/white_90"
     app:titleTypeface="sans-serif-condensed">
     <ambient
-        app:borderColor="@color/white_50"
-        app:iconColor="@color/white"
-        app:textColor="@color/white"
-        app:titleColor="@color/white_70"
+        app:borderColor="@color/black"
+        app:iconColor="@color/black"
+        app:textColor="@color/white_90"
+        app:highlightColor="@color/white_30"
+        app:titleColor="@color/white_90"
         app:rangedValuePrimaryColor="@color/white"
-        app:rangedValueSecondaryColor="@color/transparent" />
+        app:rangedValueSecondaryColor="@color/white_70"/>
+
 </drawable>

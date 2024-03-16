@@ -19,10 +19,10 @@ private const val SECOND_HAND_LENGTH_FRACTION = 0.37383f
 private const val SECOND_HAND_WIDTH_FRACTION = 0.00934f
 
 // Used for corner roundness of the arms.
-private const val ROUNDED_RECTANGLE_CORNERS_RADIUS = 1.5f
+private const val ROUNDED_RECTANGLE_CORNERS_RADIUS = 50.5f
 private const val SQUARE_RECTANGLE_CORNERS_RADIUS = 0.0f
 
-private const val CENTER_CIRCLE_DIAMETER_FRACTION = 0.03738f
+private const val CENTER_CIRCLE_DIAMETER_FRACTION = 0.00001f
 private const val OUTER_CIRCLE_STROKE_WIDTH_FRACTION = 0.00467f
 private const val NUMBER_STYLE_OUTER_CIRCLE_RADIUS_FRACTION = 0.00584f
 
