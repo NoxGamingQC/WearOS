@@ -90,6 +90,20 @@
             android:value="true" />
 
         <activity
+            android:name=".watchface.editor.WatchFaceConfigActivity"
+            android:exported="true"
+            android:label="@string/title_activity_watch_face_config"
+            android:taskAffinity=".main"
+            >
+
+            <intent-filter>
+                <action android:name="androidx.wear.watchface.editor.action.WATCH_FACE_EDITOR" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
             android:taskAffinity=""
@@ -102,8 +116,5 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <property
-            android:name="com.google.wear.watchface.format.version"
-            android:value="1" />
     </application>
 </manifest>
