@@ -10,7 +10,6 @@ import ca.noxgamingqc.android.wearos.databinding.ActivityWatchFaceConfigBinding
 import ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigStateHolder.Companion.MINUTE_HAND_LENGTH_DEFAULT_FOR_SLIDER
 import ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigStateHolder.Companion.MINUTE_HAND_LENGTH_MAXIMUM_FOR_SLIDER
 import ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigStateHolder.Companion.MINUTE_HAND_LENGTH_MINIMUM_FOR_SLIDER
-import ca.noxgamingqc.android.wearos.watchface.utilities.LEFT_COMPLICATION_ID
 import ca.noxgamingqc.android.wearos.watchface.utilities.RIGHT_COMPLICATION_ID
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -103,11 +102,6 @@ class WatchFaceConfigActivity : ComponentActivity() {
         val newColorStyle: ColorStyleIdAndResourceIds = colorStyleIdAndResourceIdsList.random()
 
         stateHolder.setColorStyle(newColorStyle.id)
-    }
-
-    fun onClickLeftComplicationButton(view: View) {
-        Log.d(TAG, "onClickLeftComplicationButton() $view")
-        stateHolder.setComplication(LEFT_COMPLICATION_ID)
     }
 
     fun onClickRightComplicationButton(view: View) {

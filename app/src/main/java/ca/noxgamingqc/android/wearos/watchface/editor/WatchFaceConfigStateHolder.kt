@@ -17,7 +17,6 @@ import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_
 import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_MINIMUM
 import ca.noxgamingqc.android.wearos.watchface.utilities.COLOR_STYLE_SETTING
 import ca.noxgamingqc.android.wearos.watchface.utilities.DRAW_HOUR_PIPS_STYLE_SETTING
-import ca.noxgamingqc.android.wearos.watchface.utilities.LEFT_COMPLICATION_ID
 import ca.noxgamingqc.android.wearos.watchface.utilities.RIGHT_COMPLICATION_ID
 import ca.noxgamingqc.android.wearos.watchface.utilities.WATCH_HAND_LENGTH_STYLE_SETTING
 import kotlinx.coroutines.CoroutineScope
@@ -150,9 +149,6 @@ class WatchFaceConfigStateHolder(
 
     fun setComplication(complicationLocation: Int) {
         val complicationSlotId = when (complicationLocation) {
-            LEFT_COMPLICATION_ID -> {
-                LEFT_COMPLICATION_ID
-            }
             RIGHT_COMPLICATION_ID -> {
                 RIGHT_COMPLICATION_ID
             }

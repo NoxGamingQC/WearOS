@@ -29,9 +29,6 @@ const val BLUE_COLOR_STYLE_ID = "blue_style_id"
 private val BLUE_COLOR_STYLE_NAME_RESOURCE_ID = R.string.blue_style_name
 private val BLUE_COLOR_STYLE_ICON_ID = R.drawable.blue_style
 
-const val WHITE_COLOR_STYLE_ID = "white_style_id"
-private val WHITE_COLOR_STYLE_NAME_RESOURCE_ID = R.string.white_style_name
-private val WHITE_COLOR_STYLE_ICON_ID = R.drawable.white_style
 
 /**
  * Represents watch face color style options the user can select (includes the unique id, the
@@ -94,17 +91,6 @@ enum class ColorStyleIdAndResourceIds(
         secondaryColorId = R.color.blue_secondary_color,
         backgroundColorId = R.color.blue_background_color,
         outerElementColorId = R.color.blue_outer_element_color
-    ),
-
-    WHITE(
-        id = WHITE_COLOR_STYLE_ID,
-        nameResourceId = WHITE_COLOR_STYLE_NAME_RESOURCE_ID,
-        iconResourceId = WHITE_COLOR_STYLE_ICON_ID,
-        complicationStyleDrawableId = R.drawable.complication_white_style,
-        primaryColorId = R.color.white_primary_color,
-        secondaryColorId = R.color.white_secondary_color,
-        backgroundColorId = R.color.white_background_color,
-        outerElementColorId = R.color.white_outer_element_color
     );
 
     companion object {
@@ -117,8 +103,7 @@ enum class ColorStyleIdAndResourceIds(
                 RED.id -> RED
                 GREEN.id -> GREEN
                 BLUE.id -> BLUE
-                WHITE.id -> WHITE
-                else -> WHITE
+                else -> AMBIENT
             }
         }
 

@@ -17,7 +17,7 @@
     <string name="colors_style_setting_description">Watchface colorization</string>
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
-    <string name="ambient_style_name">Ambient Style</string>
+    <string name="ambient_style_name">White Style</string>
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
     <string name="red_style_name">Red Style</string>
@@ -27,9 +27,6 @@
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
     <string name="blue_style_name">Blue Style</string>
-
-    <!-- Name of watchface style [CHAR LIMIT=20] -->
-    <string name="white_style_name">White Style</string>
 
     <!-- An option within the analog watch face to draw pips to mark each hour [CHAR LIMIT=20] -->
     <string name="watchface_pips_setting">Hour Pips</string>

@@ -31,22 +31,12 @@ private val DEFAULT_COMPLICATION_STYLE_DRAWABLE_ID = R.drawable.complication_red
 
 // Unique IDs for each complication. The settings activity that supports allowing users
 // to select their complication data provider requires numbers to be >= 0.
-internal const val LEFT_COMPLICATION_ID = 100
-internal const val RIGHT_COMPLICATION_ID = 101
+internal const val RIGHT_COMPLICATION_ID = 100
 
 /**
  * Represents the unique id associated with a complication and the complication types it supports.
  */
 sealed class ComplicationConfig(val id: Int, val supportedTypes: List<ComplicationType>) {
-    object Left : ComplicationConfig(
-        LEFT_COMPLICATION_ID,
-        listOf(
-            ComplicationType.RANGED_VALUE,
-            ComplicationType.MONOCHROMATIC_IMAGE,
-            ComplicationType.SHORT_TEXT,
-            ComplicationType.SMALL_IMAGE
-        )
-    )
 
     object Right : ComplicationConfig(
         RIGHT_COMPLICATION_ID,
@@ -74,31 +64,12 @@ fun createComplicationSlotManager(
             )
         }
 
-    val leftComplication = ComplicationSlot.createRoundRectComplicationSlotBuilder(
-        id = ComplicationConfig.Left.id,
-        canvasComplicationFactory = defaultCanvasComplicationFactory,
-        supportedTypes = ComplicationConfig.Left.supportedTypes,
-        defaultDataSourcePolicy = DefaultComplicationDataSourcePolicy(
-            SystemDataSources.DATA_SOURCE_DAY_OF_WEEK,
-            ComplicationType.SHORT_TEXT
-        ),
-        bounds = ComplicationSlotBounds(
-            RectF(
-                LEFT_COMPLICATION_LEFT_BOUND,
-                LEFT_AND_RIGHT_COMPLICATIONS_TOP_BOUND,
-                LEFT_COMPLICATION_RIGHT_BOUND,
-                LEFT_AND_RIGHT_COMPLICATIONS_BOTTOM_BOUND
-            )
-        )
-    )
-        .build()
-
     val rightComplication = ComplicationSlot.createRoundRectComplicationSlotBuilder(
         id = ComplicationConfig.Right.id,
         canvasComplicationFactory = defaultCanvasComplicationFactory,
         supportedTypes = ComplicationConfig.Right.supportedTypes,
         defaultDataSourcePolicy = DefaultComplicationDataSourcePolicy(
-            SystemDataSources.DATA_SOURCE_WATCH_BATTERY,
+            SystemDataSources.DATA_SOURCE_DATE,
             ComplicationType.SHORT_TEXT
         ),
         bounds = ComplicationSlotBounds(
@@ -111,7 +82,7 @@ fun createComplicationSlotManager(
         )
     ).build()
     return ComplicationSlotsManager(
-        listOf(leftComplication, rightComplication),
+        listOf(rightComplication),
         currentUserStyleRepository
     )
 }
