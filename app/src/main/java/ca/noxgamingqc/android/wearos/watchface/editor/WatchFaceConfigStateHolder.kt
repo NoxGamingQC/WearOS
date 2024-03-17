@@ -100,8 +100,6 @@ class WatchFaceConfigStateHolder(
                 WATCH_HAND_LENGTH_STYLE_SETTING -> {
                     minuteHandLengthKey = setting as UserStyleSetting.DoubleRangeUserStyleSetting
                 }
-                // TODO (codingjeremy): Add complication change support if settings activity
-                // PR doesn't cover it. Otherwise, remove comment.
             }
         }
     }
@@ -121,7 +119,7 @@ class WatchFaceConfigStateHolder(
                 WatchFaceLayer.ALL_WATCH_FACE_LAYERS,
                 RenderParameters.HighlightLayer(
                     RenderParameters.HighlightedElement.AllComplicationSlots,
-                    Color.RED, // Red complication highlight.
+                    Color.BLACK, // Red complication highlight.
                     Color.argb(128, 0, 0, 0) // Darken everything else.
                 )
             ),

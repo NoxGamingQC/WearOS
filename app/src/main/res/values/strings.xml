@@ -17,16 +17,16 @@
     <string name="colors_style_setting_description">Watchface colorization</string>
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
-    <string name="ambient_style_name">White</string>
+    <string name="cloud_style_name">Cloud</string>
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
-    <string name="red_style_name">Red</string>
+    <string name="watermelon_style_name">Watermelon</string>
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
-    <string name="green_style_name">Green</string>
+    <string name="forest_style_name">Forest</string>
 
     <!-- Name of watchface style [CHAR LIMIT=20] -->
-    <string name="blue_style_name">Blue</string>
+    <string name="sapphire_style_name">Sapphire</string>
 
     <!-- An option within the analog watch face to draw pips to mark each hour [CHAR LIMIT=20] -->
     <string name="watchface_pips_setting">Styles</string>

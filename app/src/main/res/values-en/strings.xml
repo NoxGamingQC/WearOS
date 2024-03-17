@@ -3,10 +3,10 @@
     <string name="app_name">NoxGamingQC</string>
     <string name="analog_watch_face_name">NoxGamingQC</string>
     <string name="colors_style_setting">Colours</string>
-    <string name="ambient_style_name">White</string>
-    <string name="red_style_name">Red</string>
-    <string name="green_style_name">Green</string>
-    <string name="blue_style_name">Blue</string>
+    <string name="cloud_style_name">Cloud</string>
+    <string name="watermelon_style_name">Watermelon</string>
+    <string name="forest_style_name">Forest</string>
+    <string name="sapphire_style_name">Sapphire</string>
     <string name="watchface_pips_setting">Styles</string>
     <string name="watchface_hand_length_setting">Minute hand length</string>
     <string name="watchface_complications_setting_left">Left</string>

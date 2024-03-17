@@ -17,35 +17,47 @@
 <resources>
     <!-- Main Style Colors -->
     <color name="color_primary">#CC2222</color>
-    <color name="color_secondary">#CCCCCC</color>
+    <color name="color_secondary">#000000</color>
 
     <!-- Button Style Colors -->
     <color name="color_primary_button">#000000</color>
 
     <!-- Style colors (based on custom colors below). -->
-    <!-- Ambient Style (used when wearable in ambient mode. -->
-    <color name="ambient_primary_color">@color/white</color>
-    <color name="ambient_secondary_color">@color/white_70</color>
-    <color name="ambient_background_color">@color/black</color>
-    <color name="ambient_outer_element_color">@color/white</color>
+    <!-- Cloud Style (used when wearable in ambient mode. -->
+    <color name="cloud_primary_color">@color/white</color>
+    <color name="cloud_secondary_color">@color/white_70</color>
+    <color name="cloud_background_color">@color/black</color>
+    <color name="cloud_outer_element_color">@color/white</color>
+    <color name="cloud_hour_hand_color">@color/white_90</color>
+    <color name="cloud_minute_hand_color">@color/white</color>
+    <color name="cloud_second_hand_color">@color/white_60</color>
 
-    <!-- Red Style -->
-    <color name="red_primary_color">@color/maroon_light</color>
-    <color name="red_secondary_color">@color/maroon_70</color>
-    <color name="red_background_color">@color/black</color>
-    <color name="red_outer_element_color">@color/white</color>
+    <!-- Watermelon Style -->
+    <color name="watermelon_primary_color">#FF816F</color>
+    <color name="watermelon_secondary_color">@color/white</color>
+    <color name="watermelon_background_color">@color/black</color>
+    <color name="watermelon_outer_element_color">@color/white</color>
+    <color name="watermelon_hour_hand_color">#FF816F</color>
+    <color name="watermelon_minute_hand_color">@color/white</color>
+    <color name="watermelon_second_hand_color">#f05c4a</color>
 
-    <!-- Green Style -->
-    <color name="green_primary_color">@color/light_green</color>
-    <color name="green_secondary_color">@color/dark_green</color>
-    <color name="green_background_color">@color/black</color>
-    <color name="green_outer_element_color">@color/white</color>
+    <!-- Forest Style -->
+    <color name="forest_primary_color">@color/light_green</color>
+    <color name="forest_secondary_color">@color/dark_green</color>
+    <color name="forest_background_color">@color/black</color>
+    <color name="forest_outer_element_color">@color/white</color>
+    <color name="forest_hour_hand_color">@color/white_70</color>
+    <color name="forest_minute_hand_color">@color/black</color>
+    <color name="forest_second_hand_color">@color/white</color>
 
-    <!-- Blue Style -->
-    <color name="blue_primary_color">@color/light_blue</color>
-    <color name="blue_secondary_color">@color/dark_blue</color>
-    <color name="blue_background_color">@color/black</color>
-    <color name="blue_outer_element_color">@color/white</color>
+    <!-- Sapphire Style -->
+    <color name="sapphire_primary_color">@color/light_blue</color>
+    <color name="sapphire_secondary_color">@color/dark_blue</color>
+    <color name="sapphire_background_color">@color/black</color>
+    <color name="sapphire_outer_element_color">@color/white</color>
+    <color name="sapphire_hour_hand_color">@color/white_70</color>
+    <color name="sapphire_minute_hand_color">@color/black</color>
+    <color name="sapphire_second_hand_color">@color/white</color>
 
     <!-- custom colors. -->
     <color name="transparent">#00000000</color>

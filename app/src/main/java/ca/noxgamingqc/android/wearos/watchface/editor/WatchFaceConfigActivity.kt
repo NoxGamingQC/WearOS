@@ -95,9 +95,6 @@ class WatchFaceConfigActivity : ComponentActivity() {
 
     fun onClickColorStylePickerButton(view: View) {
         Log.d(TAG, "onClickColorStylePickerButton() $view")
-
-        // TODO (codingjeremy): Replace with a RecyclerView to choose color style (next CL)
-        // Selects a random color style from list.
         val colorStyleIdAndResourceIdsList = enumValues<ColorStyleIdAndResourceIds>()
         val newColorStyle: ColorStyleIdAndResourceIds = colorStyleIdAndResourceIdsList.random()
 

@@ -10,5 +10,5 @@
                           A35,35 0 0,1 70,35
                           A35,35 0 0,1 35,70
                           A35,35 0 0,1 0,35"
-        android:fillColor="@color/red_primary_color"/>
+        android:fillColor="@color/forest_primary_color"/>
 </vector>

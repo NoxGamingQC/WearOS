@@ -13,21 +13,21 @@ import ca.noxgamingqc.android.wearos.R
 // X_COLOR_STYLE_ID - id in watch face database for each style id.
 // X_COLOR_STYLE_NAME_RESOURCE_ID - String name to display in the user settings UI for the style.
 // X_COLOR_STYLE_ICON_ID - Icon to display in the user settings UI for the style.
-const val AMBIENT_COLOR_STYLE_ID = "ambient_style_id"
-private val AMBIENT_COLOR_STYLE_NAME_RESOURCE_ID = R.string.ambient_style_name
-private val AMBIENT_COLOR_STYLE_ICON_ID = R.drawable.white_style
+const val CLOUD_COLOR_STYLE_ID = "cloud_style_id"
+private val CLOUD_COLOR_STYLE_NAME_RESOURCE_ID = R.string.cloud_style_name
+private val CLOUD_COLOR_STYLE_ICON_ID = R.drawable.cloud_style
 
-const val RED_COLOR_STYLE_ID = "red_style_id"
-private val RED_COLOR_STYLE_NAME_RESOURCE_ID = R.string.red_style_name
-private val RED_COLOR_STYLE_ICON_ID = R.drawable.red_style
+const val WATERMELON_COLOR_STYLE_ID = "watermelon_style_id"
+private val WATERMELON_COLOR_STYLE_NAME_RESOURCE_ID = R.string.watermelon_style_name
+private val WATERMELON_COLOR_STYLE_ICON_ID = R.drawable.watermelon_style
 
-const val GREEN_COLOR_STYLE_ID = "green_style_id"
-private val GREEN_COLOR_STYLE_NAME_RESOURCE_ID = R.string.green_style_name
-private val GREEN_COLOR_STYLE_ICON_ID = R.drawable.green_style
+const val FOREST_COLOR_STYLE_ID = "forest_style_id"
+private val FOREST_COLOR_STYLE_NAME_RESOURCE_ID = R.string.forest_style_name
+private val FOREST_COLOR_STYLE_ICON_ID = R.drawable.forest_style
 
-const val BLUE_COLOR_STYLE_ID = "blue_style_id"
-private val BLUE_COLOR_STYLE_NAME_RESOURCE_ID = R.string.blue_style_name
-private val BLUE_COLOR_STYLE_ICON_ID = R.drawable.blue_style
+const val SAPPHIRE_COLOR_STYLE_ID = "sapphire_style_id"
+private val SAPPHIRE_COLOR_STYLE_NAME_RESOURCE_ID = R.string.sapphire_style_name
+private val SAPPHIRE_COLOR_STYLE_ICON_ID = R.drawable.sapphire_style
 
 
 /**
@@ -47,50 +47,63 @@ enum class ColorStyleIdAndResourceIds(
     @ColorRes val primaryColorId: Int,
     @ColorRes val secondaryColorId: Int,
     @ColorRes val backgroundColorId: Int,
-    @ColorRes val outerElementColorId: Int
+    @ColorRes val outerElementColorId: Int,
+    @ColorRes val hourHandColorId: Int,
+    @ColorRes val minuteHandColorId: Int,
+    @ColorRes val secondHandColorId: Int
 ) {
-    AMBIENT(
-        id = AMBIENT_COLOR_STYLE_ID,
-        nameResourceId = AMBIENT_COLOR_STYLE_NAME_RESOURCE_ID,
-        iconResourceId = AMBIENT_COLOR_STYLE_ICON_ID,
-        complicationStyleDrawableId = R.drawable.complication_white_style,
-        primaryColorId = R.color.ambient_primary_color,
-        secondaryColorId = R.color.ambient_secondary_color,
-        backgroundColorId = R.color.ambient_background_color,
-        outerElementColorId = R.color.ambient_outer_element_color
+    CLOUD(
+        id = CLOUD_COLOR_STYLE_ID,
+        nameResourceId = CLOUD_COLOR_STYLE_NAME_RESOURCE_ID,
+        iconResourceId = CLOUD_COLOR_STYLE_ICON_ID,
+        complicationStyleDrawableId = R.drawable.complication_cloud_style,
+        primaryColorId = R.color.cloud_primary_color,
+        secondaryColorId = R.color.cloud_secondary_color,
+        backgroundColorId = R.color.cloud_background_color,
+        outerElementColorId = R.color.cloud_outer_element_color,
+        hourHandColorId = R.color.cloud_hour_hand_color,
+        minuteHandColorId = R.color.cloud_minute_hand_color,
+        secondHandColorId = R.color.cloud_second_hand_color
+    ),
+    WATERMELON(
+        id = WATERMELON_COLOR_STYLE_ID,
+        nameResourceId = WATERMELON_COLOR_STYLE_NAME_RESOURCE_ID,
+        iconResourceId = WATERMELON_COLOR_STYLE_ICON_ID,
+        complicationStyleDrawableId = R.drawable.complication_watermelon_style,
+        primaryColorId = R.color.watermelon_primary_color,
+        secondaryColorId = R.color.watermelon_secondary_color,
+        backgroundColorId = R.color.watermelon_background_color,
+        outerElementColorId = R.color.watermelon_outer_element_color,
+        hourHandColorId = R.color.watermelon_hour_hand_color,
+        minuteHandColorId = R.color.watermelon_minute_hand_color,
+        secondHandColorId = R.color.watermelon_second_hand_color
+    ),
+    FOREST(
+        id = FOREST_COLOR_STYLE_ID,
+        nameResourceId = FOREST_COLOR_STYLE_NAME_RESOURCE_ID,
+        iconResourceId = FOREST_COLOR_STYLE_ICON_ID,
+        complicationStyleDrawableId = R.drawable.complication_forest_style,
+        primaryColorId = R.color.forest_primary_color,
+        secondaryColorId = R.color.forest_secondary_color,
+        backgroundColorId = R.color.forest_background_color,
+        outerElementColorId = R.color.forest_outer_element_color,
+        hourHandColorId = R.color.forest_hour_hand_color,
+        minuteHandColorId = R.color.forest_minute_hand_color,
+        secondHandColorId = R.color.forest_second_hand_color
     ),
 
-    RED(
-        id = RED_COLOR_STYLE_ID,
-        nameResourceId = RED_COLOR_STYLE_NAME_RESOURCE_ID,
-        iconResourceId = RED_COLOR_STYLE_ICON_ID,
-        complicationStyleDrawableId = R.drawable.complication_red_style,
-        primaryColorId = R.color.red_primary_color,
-        secondaryColorId = R.color.red_secondary_color,
-        backgroundColorId = R.color.red_background_color,
-        outerElementColorId = R.color.red_outer_element_color
-    ),
-
-    GREEN(
-        id = GREEN_COLOR_STYLE_ID,
-        nameResourceId = GREEN_COLOR_STYLE_NAME_RESOURCE_ID,
-        iconResourceId = GREEN_COLOR_STYLE_ICON_ID,
-        complicationStyleDrawableId = R.drawable.complication_green_style,
-        primaryColorId = R.color.green_primary_color,
-        secondaryColorId = R.color.green_secondary_color,
-        backgroundColorId = R.color.green_background_color,
-        outerElementColorId = R.color.green_outer_element_color
-    ),
-
-    BLUE(
-        id = BLUE_COLOR_STYLE_ID,
-        nameResourceId = BLUE_COLOR_STYLE_NAME_RESOURCE_ID,
-        iconResourceId = BLUE_COLOR_STYLE_ICON_ID,
-        complicationStyleDrawableId = R.drawable.complication_blue_style,
-        primaryColorId = R.color.blue_primary_color,
-        secondaryColorId = R.color.blue_secondary_color,
-        backgroundColorId = R.color.blue_background_color,
-        outerElementColorId = R.color.blue_outer_element_color
+    SAPPHIRE(
+        id = SAPPHIRE_COLOR_STYLE_ID,
+        nameResourceId = SAPPHIRE_COLOR_STYLE_NAME_RESOURCE_ID,
+        iconResourceId = SAPPHIRE_COLOR_STYLE_ICON_ID,
+        complicationStyleDrawableId = R.drawable.complication_sapphire_style,
+        primaryColorId = R.color.sapphire_primary_color,
+        secondaryColorId = R.color.sapphire_secondary_color,
+        backgroundColorId = R.color.sapphire_background_color,
+        outerElementColorId = R.color.sapphire_outer_element_color,
+        hourHandColorId = R.color.sapphire_hour_hand_color,
+        minuteHandColorId = R.color.sapphire_minute_hand_color,
+        secondHandColorId = R.color.sapphire_second_hand_color
     );
 
     companion object {
@@ -99,11 +112,11 @@ enum class ColorStyleIdAndResourceIds(
          */
         fun getColorStyleConfig(id: String): ColorStyleIdAndResourceIds {
             return when (id) {
-                AMBIENT.id -> AMBIENT
-                RED.id -> RED
-                GREEN.id -> GREEN
-                BLUE.id -> BLUE
-                else -> AMBIENT
+                CLOUD.id -> CLOUD
+                WATERMELON.id -> WATERMELON
+                FOREST.id -> FOREST
+                SAPPHIRE.id -> SAPPHIRE
+                else -> CLOUD
             }
         }
 

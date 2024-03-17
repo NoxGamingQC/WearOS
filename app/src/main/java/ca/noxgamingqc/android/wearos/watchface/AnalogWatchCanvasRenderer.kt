@@ -308,32 +308,29 @@ class AnalogWatchCanvasRenderer(
             val drawAmbient = renderParameters.drawMode == DrawMode.AMBIENT
 
             clockHandPaint.style = if (drawAmbient) Paint.Style.STROKE else Paint.Style.FILL
-            clockHandPaint.color = if (drawAmbient) {
-                watchFaceColors.ambientPrimaryColor
-            } else {
-                watchFaceColors.activePrimaryColor
-            }
 
             // Draw hour hand.
             withRotation(hourRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
+                clockHandPaint.color = watchFaceColors.hourHandColor
                 drawPath(hourHandBorder, clockHandPaint)
             }
 
             // Draw minute hand.
             withRotation(minuteRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
+                clockHandPaint.color = watchFaceColors.minuteHandColor
                 drawPath(minuteHandBorder, clockHandPaint)
             }
 
             // Draw second hand if not in ambient mode
             if (!drawAmbient) {
-                clockHandPaint.color = watchFaceColors.activeSecondaryColor
+                clockHandPaint.color = watchFaceColors.secondHandColor
 
                 // Second hand has a different color style (secondary color) and is only drawn in
                 // active mode, so we calculate it here (not above with others).
                 val secondsPerSecondHandRotation = Duration.ofMinutes(1).seconds
                 val secondsRotation = secondOfDay.rem(secondsPerSecondHandRotation) * 360.0f /
                         secondsPerSecondHandRotation
-                clockHandPaint.color = watchFaceColors.activeSecondaryColor
+                clockHandPaint.color = watchFaceColors.secondHandColor
 
                 withRotation(secondsRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
                     drawPath(secondHand, clockHandPaint)
@@ -479,7 +476,9 @@ class AnalogWatchCanvasRenderer(
         } else if(hasNumber) {
             val textBounds = Rect()
             textPaint.color = outerElementColor
-            for (i in 0 until 12) {
+            outerElementPaint.color = outerElementColor
+
+                    for (i in 0 until 12) {
                 val rotation = (0.5f/3f) * (i + 1).toFloat() * Math.PI
                 val dx = sin(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
                 val dy = -cos(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
@@ -494,6 +493,7 @@ class AnalogWatchCanvasRenderer(
             canvas.save()
             canvas.restore()
         }  else if(hisDotted) {
+            textPaint.color = outerElementColor
             outerElementPaint.strokeWidth = outerCircleStokeWidthFraction * bounds.width()
             outerElementPaint.color = outerElementColor
             canvas.save()
@@ -508,6 +508,7 @@ class AnalogWatchCanvasRenderer(
             }
             canvas.restore()
         } else {
+            textPaint.color = outerElementColor
             outerElementPaint.strokeWidth = outerCircleStokeWidthFraction * bounds.width()
             outerElementPaint.color = outerElementColor
             canvas.save()
