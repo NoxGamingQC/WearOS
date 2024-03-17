@@ -50,7 +50,8 @@ enum class ColorStyleIdAndResourceIds(
     @ColorRes val outerElementColorId: Int,
     @ColorRes val hourHandColorId: Int,
     @ColorRes val minuteHandColorId: Int,
-    @ColorRes val secondHandColorId: Int
+    @ColorRes val secondHandColorId: Int,
+    @ColorRes val centerDotColorId: Int
 ) {
     CLOUD(
         id = CLOUD_COLOR_STYLE_ID,
@@ -63,7 +64,8 @@ enum class ColorStyleIdAndResourceIds(
         outerElementColorId = R.color.cloud_outer_element_color,
         hourHandColorId = R.color.cloud_hour_hand_color,
         minuteHandColorId = R.color.cloud_minute_hand_color,
-        secondHandColorId = R.color.cloud_second_hand_color
+        secondHandColorId = R.color.cloud_second_hand_color,
+        centerDotColorId = R.color.cloud_center_dot_color
     ),
     WATERMELON(
         id = WATERMELON_COLOR_STYLE_ID,
@@ -76,7 +78,8 @@ enum class ColorStyleIdAndResourceIds(
         outerElementColorId = R.color.watermelon_outer_element_color,
         hourHandColorId = R.color.watermelon_hour_hand_color,
         minuteHandColorId = R.color.watermelon_minute_hand_color,
-        secondHandColorId = R.color.watermelon_second_hand_color
+        secondHandColorId = R.color.watermelon_second_hand_color,
+        centerDotColorId = R.color.watermelon_center_dot_color
     ),
     FOREST(
         id = FOREST_COLOR_STYLE_ID,
@@ -89,7 +92,8 @@ enum class ColorStyleIdAndResourceIds(
         outerElementColorId = R.color.forest_outer_element_color,
         hourHandColorId = R.color.forest_hour_hand_color,
         minuteHandColorId = R.color.forest_minute_hand_color,
-        secondHandColorId = R.color.forest_second_hand_color
+        secondHandColorId = R.color.forest_second_hand_color,
+        centerDotColorId = R.color.forrest_center_dot_color
     ),
 
     SAPPHIRE(
@@ -103,7 +107,8 @@ enum class ColorStyleIdAndResourceIds(
         outerElementColorId = R.color.sapphire_outer_element_color,
         hourHandColorId = R.color.sapphire_hour_hand_color,
         minuteHandColorId = R.color.sapphire_minute_hand_color,
-        secondHandColorId = R.color.sapphire_second_hand_color
+        secondHandColorId = R.color.sapphire_second_hand_color,
+        centerDotColorId = R.color.sapphire_center_dot_color
     );
 
     companion object {

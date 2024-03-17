@@ -28,7 +28,8 @@ data class WatchFaceColorPalette(
     val ambientOuterElementColor: Int,
     val hourHandColor: Int,
     val minuteHandColor: Int,
-    val secondHandColor: Int
+    val secondHandColor: Int,
+    val centerDotColor: Int
 ) {
     companion object {
         /**
@@ -56,6 +57,7 @@ data class WatchFaceColorPalette(
                 hourHandColor = context.getColor(activeColorStyle.hourHandColorId),
                 minuteHandColor = context.getColor(activeColorStyle.minuteHandColorId),
                 secondHandColor = context.getColor(activeColorStyle.secondHandColorId),
+                centerDotColor = context.getColor(activeColorStyle.centerDotColorId),
             )
         }
     }

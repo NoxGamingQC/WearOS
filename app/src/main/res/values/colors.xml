@@ -31,6 +31,7 @@
     <color name="cloud_hour_hand_color">@color/white_90</color>
     <color name="cloud_minute_hand_color">@color/white</color>
     <color name="cloud_second_hand_color">@color/white_60</color>
+    <color name="cloud_center_dot_color">@color/white_30</color>
 
     <!-- Watermelon Style -->
     <color name="watermelon_primary_color">#FF816F</color>
@@ -40,6 +41,7 @@
     <color name="watermelon_hour_hand_color">#FF816F</color>
     <color name="watermelon_minute_hand_color">@color/white</color>
     <color name="watermelon_second_hand_color">#f05c4a</color>
+    <color name="watermelon_center_dot_color">#c05808</color>
 
     <!-- Forest Style -->
     <color name="forest_primary_color">@color/light_green</color>
@@ -49,6 +51,7 @@
     <color name="forest_hour_hand_color">@color/light_green</color>
     <color name="forest_minute_hand_color">@color/white</color>
     <color name="forest_second_hand_color">@color/dark_green</color>
+    <color name="forrest_center_dot_color">@color/dark_green</color>
 
     <!-- Sapphire Style -->
     <color name="sapphire_primary_color">@color/light_blue</color>
@@ -58,6 +61,7 @@
     <color name="sapphire_hour_hand_color">@color/light_blue</color>
     <color name="sapphire_minute_hand_color">@color/white</color>
     <color name="sapphire_second_hand_color">@color/dark_blue</color>
+    <color name="sapphire_center_dot_color">@color/dark_blue</color>
 
     <!-- custom colors. -->
     <color name="transparent">#00000000</color>

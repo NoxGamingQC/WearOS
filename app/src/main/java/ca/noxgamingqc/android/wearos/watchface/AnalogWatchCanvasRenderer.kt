@@ -240,8 +240,7 @@ class AnalogWatchCanvasRenderer(
             drawClockHands(canvas, bounds, zonedDateTime)
         }
 
-        if (renderParameters.drawMode == DrawMode.INTERACTIVE &&
-            renderParameters.watchFaceLayers.contains(WatchFaceLayer.BASE) &&
+        if (renderParameters.watchFaceLayers.contains(WatchFaceLayer.BASE) &&
             watchFaceData.drawHourPips
         ) {
             drawNumberStyleOuterElement(
@@ -307,7 +306,7 @@ class AnalogWatchCanvasRenderer(
         ) {
             val drawAmbient = renderParameters.drawMode == DrawMode.AMBIENT
 
-            clockHandPaint.style = if (drawAmbient) Paint.Style.STROKE else Paint.Style.FILL
+            clockHandPaint.style = if (drawAmbient) Paint.Style.FILL else Paint.Style.FILL
 
             // Draw hour hand.
             withRotation(hourRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
@@ -330,11 +329,17 @@ class AnalogWatchCanvasRenderer(
                 val secondsPerSecondHandRotation = Duration.ofMinutes(1).seconds
                 val secondsRotation = secondOfDay.rem(secondsPerSecondHandRotation) * 360.0f /
                         secondsPerSecondHandRotation
-                clockHandPaint.color = watchFaceColors.secondHandColor
 
+                clockHandPaint.color = watchFaceColors.minuteHandColor
+                drawCircle(bounds.exactCenterX(), bounds.exactCenterY(), (0.1).toFloat(), clockHandPaint)
                 withRotation(secondsRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
+                    clockHandPaint.color = watchFaceColors.secondHandColor
                     drawPath(secondHand, clockHandPaint)
                 }
+
+                //Draw center dot
+                clockHandPaint.color = watchFaceColors.centerDotColor
+                canvas.drawCircle(bounds.exactCenterX(), bounds.exactCenterY(), (3.5).toFloat(), clockHandPaint)
             }
         }
     }
@@ -439,7 +444,7 @@ class AnalogWatchCanvasRenderer(
     ) {
         // Draws text hour indicators (12, 3, 6, and 9).
         val hasCardinalNumber = false;
-        val hasNumber = false;
+        val hasNumber = true;
         val hisDotted = false;
         if(hasCardinalNumber) {
             val textBounds = Rect()
