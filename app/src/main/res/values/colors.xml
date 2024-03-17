@@ -46,18 +46,18 @@
     <color name="forest_secondary_color">@color/dark_green</color>
     <color name="forest_background_color">@color/black</color>
     <color name="forest_outer_element_color">@color/white</color>
-    <color name="forest_hour_hand_color">@color/white_70</color>
-    <color name="forest_minute_hand_color">@color/black</color>
-    <color name="forest_second_hand_color">@color/white</color>
+    <color name="forest_hour_hand_color">@color/light_green</color>
+    <color name="forest_minute_hand_color">@color/white</color>
+    <color name="forest_second_hand_color">@color/dark_green</color>
 
     <!-- Sapphire Style -->
     <color name="sapphire_primary_color">@color/light_blue</color>
     <color name="sapphire_secondary_color">@color/dark_blue</color>
     <color name="sapphire_background_color">@color/black</color>
     <color name="sapphire_outer_element_color">@color/white</color>
-    <color name="sapphire_hour_hand_color">@color/white_70</color>
-    <color name="sapphire_minute_hand_color">@color/black</color>
-    <color name="sapphire_second_hand_color">@color/white</color>
+    <color name="sapphire_hour_hand_color">@color/light_blue</color>
+    <color name="sapphire_minute_hand_color">@color/white</color>
+    <color name="sapphire_second_hand_color">@color/dark_blue</color>
 
     <!-- custom colors. -->
     <color name="transparent">#00000000</color>
