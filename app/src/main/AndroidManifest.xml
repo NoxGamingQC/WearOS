@@ -12,7 +12,7 @@
         android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/noxgamingqc"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
