@@ -20,7 +20,7 @@
     app:backgroundColor="@color/black"
     app:borderColor="@color/black"
     app:borderStyle="solid"
-    app:highlightColor="@color/white_30"
+    app:highlightColor="@color/white_70"
     app:iconColor="@color/white"
     app:rangedValuePrimaryColor="@color/white_90"
     app:rangedValueRingWidth="2dp"
@@ -29,13 +29,4 @@
     app:textTypeface="sans-serif-condensed"
     app:titleColor="@color/white_90"
     app:titleTypeface="sans-serif-condensed">
-    <ambient
-        app:borderColor="@color/black"
-        app:iconColor="@color/black"
-        app:textColor="@color/white_90"
-        app:highlightColor="@color/white_30"
-        app:titleColor="@color/white_90"
-        app:rangedValuePrimaryColor="@color/white"
-        app:rangedValueSecondaryColor="@color/white_70"/>
-
 </drawable>

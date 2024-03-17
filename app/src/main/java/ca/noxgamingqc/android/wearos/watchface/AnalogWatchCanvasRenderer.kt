@@ -441,37 +441,87 @@ class AnalogWatchCanvasRenderer(
         gapBetweenOuterCircleAndBorderFraction: Float
     ) {
         // Draws text hour indicators (12, 3, 6, and 9).
-        val textBounds = Rect()
-        textPaint.color = outerElementColor
-        for (i in 0 until 4) {
-            val rotation = 0.5f * (i + 1).toFloat() * Math.PI
-            val dx = sin(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
-            val dy = -cos(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
-            textPaint.getTextBounds(HOUR_MARKS[i], 0, HOUR_MARKS[i].length, textBounds)
-            canvas.drawText(
-                HOUR_MARKS[i],
-                bounds.exactCenterX() + dx - textBounds.width() / 2.0f,
-                bounds.exactCenterY() + dy + textBounds.height() / 2.0f,
-                textPaint
-            )
-        }
+        val hasCardinalNumber = false;
+        val hasNumber = false;
+        val hisDotted = false;
+        if(hasCardinalNumber) {
+            val textBounds = Rect()
+            textPaint.color = outerElementColor
+            for (i in 0 until 4) {
+                val rotation = 0.5f * (i + 1).toFloat() * Math.PI
+                val dx = sin(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
+                val dy = -cos(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
+                textPaint.getTextBounds(HOUR_MARKS[i], 0, HOUR_MARKS[i].length, textBounds)
+                canvas.drawText(
+                    HOUR_MARKS[i],
+                    bounds.exactCenterX() + dx - textBounds.width() / 2.0f,
+                    bounds.exactCenterY() + dy + textBounds.height() / 2.0f,
+                    textPaint
+                )
+            }
 
-        // Draws dots for the remain hour indicators between the numbers above.
-        outerElementPaint.strokeWidth = outerCircleStokeWidthFraction * bounds.width()
-        outerElementPaint.color = outerElementColor
-        canvas.save()
-        for (i in 0 until 12) {
-            if (i % 3 != 0) {
+            // Draws dots for the remain hour indicators between the numbers above.
+            outerElementPaint.strokeWidth = outerCircleStokeWidthFraction * bounds.width()
+            outerElementPaint.color = outerElementColor
+            canvas.save()
+            for (i in 0 until 12) {
+                if (i % 3 != 0) {
+                    drawTopMiddleCircle(
+                        canvas,
+                        bounds,
+                        numberStyleOuterCircleRadiusFraction,
+                        gapBetweenOuterCircleAndBorderFraction
+                    )
+                }
+                canvas.rotate(360.0f / 12.0f, bounds.exactCenterX(), bounds.exactCenterY())
+            }
+            canvas.restore()
+        } else if(hasNumber) {
+            val textBounds = Rect()
+            textPaint.color = outerElementColor
+            for (i in 0 until 12) {
+                val rotation = (0.5f/3f) * (i + 1).toFloat() * Math.PI
+                val dx = sin(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
+                val dy = -cos(rotation).toFloat() * numberRadiusFraction * bounds.width().toFloat()
+                textPaint.getTextBounds(ALL_HOURS[i], 0, ALL_HOURS[i].length, textBounds)
+                canvas.drawText(
+                    ALL_HOURS[i],
+                    bounds.exactCenterX() + dx - textBounds.width() / 2.0f,
+                    bounds.exactCenterY() + dy + textBounds.height() / 2.0f,
+                    textPaint
+                )
+            }
+            canvas.save()
+            canvas.restore()
+        }  else if(hisDotted) {
+            outerElementPaint.strokeWidth = outerCircleStokeWidthFraction * bounds.width()
+            outerElementPaint.color = outerElementColor
+            canvas.save()
+            for (i in 0 until 12) {
                 drawTopMiddleCircle(
                     canvas,
                     bounds,
                     numberStyleOuterCircleRadiusFraction,
                     gapBetweenOuterCircleAndBorderFraction
                 )
+                canvas.rotate(360.0f / 12.0f, bounds.exactCenterX(), bounds.exactCenterY())
             }
-            canvas.rotate(360.0f / 12.0f, bounds.exactCenterX(), bounds.exactCenterY())
+            canvas.restore()
+        } else {
+            outerElementPaint.strokeWidth = outerCircleStokeWidthFraction * bounds.width()
+            outerElementPaint.color = outerElementColor
+            canvas.save()
+            for (i in 0 until 12) {
+                drawTopMiddleCircle(
+                    canvas,
+                    bounds,
+                    numberStyleOuterCircleRadiusFraction,
+                    gapBetweenOuterCircleAndBorderFraction
+                )
+                canvas.rotate(360.0f / 12.0f, bounds.exactCenterX(), bounds.exactCenterY())
+            }
+            canvas.restore()
         }
-        canvas.restore()
     }
 
     /** Draws the outer circle on the top middle of the given bounds. */
@@ -500,6 +550,7 @@ class AnalogWatchCanvasRenderer(
 
         // Painted between pips on watch face for hour marks.
         private val HOUR_MARKS = arrayOf("3", "6", "9", "12")
+        private val ALL_HOURS = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", )
 
         // Used to canvas.scale() to scale watch hands in proper bounds. This will always be 1.0.
         private const val WATCH_HAND_SCALE = 1.0f
