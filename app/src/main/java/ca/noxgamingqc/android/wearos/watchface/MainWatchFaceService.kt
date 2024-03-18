@@ -10,6 +10,7 @@ import androidx.wear.watchface.WatchFaceType
 import androidx.wear.watchface.WatchState
 import androidx.wear.watchface.style.CurrentUserStyleRepository
 import androidx.wear.watchface.style.UserStyleSchema
+import ca.noxgamingqc.android.wearos.watchface.analog.AnalogWatchCanvasRenderer
 import ca.noxgamingqc.android.wearos.watchface.utilities.createComplicationSlotManager
 import ca.noxgamingqc.android.wearos.watchface.utilities.createUserStyleSchema
 

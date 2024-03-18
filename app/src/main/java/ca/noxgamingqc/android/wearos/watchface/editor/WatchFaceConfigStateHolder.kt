@@ -12,9 +12,9 @@ import androidx.wear.watchface.style.UserStyle
 import androidx.wear.watchface.style.UserStyleSchema
 import androidx.wear.watchface.style.UserStyleSetting
 import androidx.wear.watchface.style.WatchFaceLayer
-import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_DEFAULT
-import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_MAXIMUM
-import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_MINIMUM
+import ca.noxgamingqc.android.wearos.watchface.analog.data.MINUTE_HAND_LENGTH_FRACTION_DEFAULT
+import ca.noxgamingqc.android.wearos.watchface.analog.data.MINUTE_HAND_LENGTH_FRACTION_MAXIMUM
+import ca.noxgamingqc.android.wearos.watchface.analog.data.MINUTE_HAND_LENGTH_FRACTION_MINIMUM
 import ca.noxgamingqc.android.wearos.watchface.utilities.COLOR_STYLE_SETTING
 import ca.noxgamingqc.android.wearos.watchface.utilities.DRAW_HOUR_PIPS_STYLE_SETTING
 import ca.noxgamingqc.android.wearos.watchface.utilities.RIGHT_COMPLICATION_ID

@@ -5,11 +5,8 @@ import android.util.Log
 import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.lifecycleScope
-import ca.noxgamingqc.android.wearos.watchface.data.ColorStyleIdAndResourceIds
+import ca.noxgamingqc.android.wearos.watchface.analog.data.ColorStyleIdAndResourceIds
 import ca.noxgamingqc.android.wearos.databinding.ActivityWatchFaceConfigBinding
-import ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigStateHolder.Companion.MINUTE_HAND_LENGTH_DEFAULT_FOR_SLIDER
-import ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigStateHolder.Companion.MINUTE_HAND_LENGTH_MAXIMUM_FOR_SLIDER
-import ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigStateHolder.Companion.MINUTE_HAND_LENGTH_MINIMUM_FOR_SLIDER
 import ca.noxgamingqc.android.wearos.watchface.utilities.RIGHT_COMPLICATION_ID
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -39,19 +36,6 @@ class WatchFaceConfigActivity : ComponentActivity() {
         // Disable widgets until data loads and values are set.
         binding.colorStylePickerButton.isEnabled = false
         binding.ticksEnabledSwitch.isEnabled = false
-        binding.minuteHandLengthSlider.isEnabled = false
-
-        // Set max and min.
-        binding.minuteHandLengthSlider.valueTo = MINUTE_HAND_LENGTH_MAXIMUM_FOR_SLIDER
-        binding.minuteHandLengthSlider.valueFrom = MINUTE_HAND_LENGTH_MINIMUM_FOR_SLIDER
-        binding.minuteHandLengthSlider.value = MINUTE_HAND_LENGTH_DEFAULT_FOR_SLIDER
-
-        binding.minuteHandLengthSlider.addOnChangeListener { slider, value, fromUser ->
-            Log.d(TAG, "addOnChangeListener(): $slider, $value, $fromUser")
-            if (fromUser) {
-                stateHolder.setMinuteHandArmLength(value)
-            }
-        }
 
         lifecycleScope.launch(Dispatchers.Main.immediate) {
             stateHolder.uiState
@@ -81,7 +65,6 @@ class WatchFaceConfigActivity : ComponentActivity() {
         Log.d(TAG, "\tselected color style: $colorStyleId")
 
         binding.ticksEnabledSwitch.isChecked = userStylesAndPreview.ticksEnabled
-        binding.minuteHandLengthSlider.value = userStylesAndPreview.minuteHandLength
         binding.preview.watchFaceBackground.setImageBitmap(userStylesAndPreview.previewImage)
 
         enabledWidgets()
@@ -90,7 +73,6 @@ class WatchFaceConfigActivity : ComponentActivity() {
     private fun enabledWidgets() {
         binding.colorStylePickerButton.isEnabled = true
         binding.ticksEnabledSwitch.isEnabled = true
-        binding.minuteHandLengthSlider.isEnabled = true
     }
 
     fun onClickColorStylePickerButton(view: View) {

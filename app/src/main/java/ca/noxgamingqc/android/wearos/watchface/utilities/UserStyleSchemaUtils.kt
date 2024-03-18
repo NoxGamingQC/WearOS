@@ -5,11 +5,11 @@ import androidx.wear.watchface.style.UserStyleSchema
 import androidx.wear.watchface.style.UserStyleSetting
 import androidx.wear.watchface.style.WatchFaceLayer
 import ca.noxgamingqc.android.wearos.R
-import ca.noxgamingqc.android.wearos.watchface.data.ColorStyleIdAndResourceIds
-import ca.noxgamingqc.android.wearos.watchface.data.DRAW_HOUR_PIPS_DEFAULT
-import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_DEFAULT
-import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_MAXIMUM
-import ca.noxgamingqc.android.wearos.watchface.data.MINUTE_HAND_LENGTH_FRACTION_MINIMUM
+import ca.noxgamingqc.android.wearos.watchface.analog.data.ColorStyleIdAndResourceIds
+import ca.noxgamingqc.android.wearos.watchface.analog.data.DRAW_HOUR_PIPS_DEFAULT
+import ca.noxgamingqc.android.wearos.watchface.analog.data.MINUTE_HAND_LENGTH_FRACTION_DEFAULT
+import ca.noxgamingqc.android.wearos.watchface.analog.data.MINUTE_HAND_LENGTH_FRACTION_MAXIMUM
+import ca.noxgamingqc.android.wearos.watchface.analog.data.MINUTE_HAND_LENGTH_FRACTION_MINIMUM
 
 // Keys to matched content in the  the user style settings. We listen for changes to these
 // values in the renderer and if new, we will update the database and update the watch face

@@ -1,4 +1,4 @@
-package ca.noxgamingqc.android.wearos.watchface.data
+package ca.noxgamingqc.android.wearos.watchface.analog.data
 
 import android.content.Context
 import androidx.annotation.DrawableRes

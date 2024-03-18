@@ -90,7 +90,7 @@
             android:value="true" />
 
         <activity
-            android:name=".watchface.editor.WatchFaceConfigActivity"
+            android:name="ca.noxgamingqc.android.wearos.watchface.editor.WatchFaceConfigActivity"
             android:exported="true"
             android:label="@string/title_activity_watch_face_config"
             android:taskAffinity=".main"

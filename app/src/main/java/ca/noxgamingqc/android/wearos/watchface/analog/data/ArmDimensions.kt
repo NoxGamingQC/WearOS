@@ -1,4 +1,4 @@
-package ca.noxgamingqc.android.wearos.watchface.data
+package ca.noxgamingqc.android.wearos.watchface.analog.data
 
 data class ArmDimensions(
     val lengthFraction: Float,

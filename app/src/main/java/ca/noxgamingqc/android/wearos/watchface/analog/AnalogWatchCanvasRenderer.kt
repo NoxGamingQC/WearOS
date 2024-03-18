@@ -1,4 +1,4 @@
-package ca.noxgamingqc.android.wearos.watchface
+package ca.noxgamingqc.android.wearos.watchface.analog
 
 import android.content.Context
 import android.graphics.Canvas
@@ -20,9 +20,9 @@ import androidx.wear.watchface.style.UserStyle
 import androidx.wear.watchface.style.UserStyleSetting
 import androidx.wear.watchface.style.WatchFaceLayer
 import ca.noxgamingqc.android.wearos.R
-import ca.noxgamingqc.android.wearos.watchface.data.ColorStyleIdAndResourceIds
-import ca.noxgamingqc.android.wearos.watchface.data.WatchFaceColorPalette.Companion.convertToWatchFaceColorPalette
-import ca.noxgamingqc.android.wearos.watchface.data.WatchFaceData
+import ca.noxgamingqc.android.wearos.watchface.analog.data.ColorStyleIdAndResourceIds
+import ca.noxgamingqc.android.wearos.watchface.analog.data.WatchFaceColorPalette.Companion.convertToWatchFaceColorPalette
+import ca.noxgamingqc.android.wearos.watchface.analog.data.WatchFaceData
 import ca.noxgamingqc.android.wearos.watchface.utilities.COLOR_STYLE_SETTING
 import ca.noxgamingqc.android.wearos.watchface.utilities.DRAW_HOUR_PIPS_STYLE_SETTING
 import ca.noxgamingqc.android.wearos.watchface.utilities.WATCH_HAND_LENGTH_STYLE_SETTING
@@ -306,13 +306,15 @@ class AnalogWatchCanvasRenderer(
         ) {
             val drawAmbient = renderParameters.drawMode == DrawMode.AMBIENT
 
-            clockHandPaint.style = if (drawAmbient) Paint.Style.FILL else Paint.Style.FILL
+            clockHandPaint.style = if (drawAmbient) Paint.Style.STROKE else Paint.Style.FILL
 
             // Draw hour hand.
             withRotation(hourRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
                 clockHandPaint.color = watchFaceColors.hourHandColor
                 drawPath(hourHandBorder, clockHandPaint)
             }
+
+            clockHandPaint.style = if (drawAmbient) Paint.Style.FILL else Paint.Style.FILL
 
             // Draw minute hand.
             withRotation(minuteRotation, bounds.exactCenterX(), bounds.exactCenterY()) {
@@ -355,7 +357,7 @@ class AnalogWatchCanvasRenderer(
                 bounds,
                 watchFaceData.hourHandDimensions.lengthFraction,
                 watchFaceData.hourHandDimensions.widthFraction,
-                watchFaceData.gapBetweenHandAndCenterFraction,
+                (watchFaceData.gapBetweenHandAndCenterFraction - (0.032).toFloat()),
                 watchFaceData.hourHandDimensions.xRadiusRoundedCorners,
                 watchFaceData.hourHandDimensions.yRadiusRoundedCorners
             )
